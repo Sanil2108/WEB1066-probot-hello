@@ -18,6 +18,7 @@ before_install:
 
 install:
   - docker build -t probot_hello .
+  - npm install
 
 script:
   - docker run --rm probot_hello npm run $NPM_TARGET
