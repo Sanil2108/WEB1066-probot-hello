@@ -5,10 +5,10 @@ env:
   - NPM_TARGET=test
   - NPM_TARGET=coverage
 
-# language: node_js
+language: node_js
 
-# node_js:
-#   - "8.3"
+node_js:
+  - "8.3"
 
 services:
   - docker
@@ -20,11 +20,9 @@ install:
   - docker build -t probot_hello .
 
 script:
-  # - docker run --rm probot_hello npm run $NPM_TARGET
-  - docker run --rm probot_hello npm run test
-  - docker run --rm probot_hello npm run lint
+  - docker run --rm probot_hello npm run $NPM_TARGET
   - ls
 
 after_success:
   - echo "We were successful!!!"
-  # - node success.js
+  - node success.js
