@@ -1,4 +1,8 @@
 sudo: required
+language: node_js
+node_js:
+  - "8.3"
+
 services:
   - docker
 
@@ -12,3 +16,7 @@ script:
   - docker run --rm probot_hello npm run test
   - docker run --rm probot_hello npm run lint
   - ls
+
+after_success:
+  - echo "We were successful!!!"
+  - node success.js
